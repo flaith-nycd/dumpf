@@ -23,6 +23,12 @@ dumpf [OPTION] file
 
 ## Example
 ```
+dumpf -d 0x0500012501000300C9C3
+    00000000:05 00 01                     ADD  AX,0100
+    00000003:25 01 00 03 00               AND  EAX,00030001
+    00000008:C9                           LEAVE
+    00000009:C3                           RET
+    
 $dumpf -d dumpf > dumpf.asm
 $cat dumpf.asm
     ...
