@@ -1,0 +1,21 @@
+[package]
+name = "dumpf"
+version = "0.8.0"
+edition = "2021"
+authors = ["Nicolas Djurovic <flaithotw@gmail.com>"]
+description = "Let's dump a file with the hexa and ascii values | 2o24o613"
+
+[dependencies]
+clap = { version = "4.5.7", features = ["cargo"] }
+
+[profile.release]
+opt-level = "z"     # Optimize for size.
+# Note that in some cases the "s" level may result in a smaller binary than "z", as explained in the opt-level documentation:
+# https://doc.rust-lang.org/cargo/reference/profiles.html#opt-level
+lto = true          # Enable Link Time Optimization
+# By default, Cargo specifies 16 parallel codegen units for release builds. This improves compile times,
+# but prevents some optimizations.
+# Set this to 1 in Cargo.toml to allow for maximum size reduction optimizations
+codegen-units = 1   # Reduce number of codegen units to increase optimizations.
+panic = "abort"     # Abort on panic
+strip = true        # Automatically strip symbols from the binary.
