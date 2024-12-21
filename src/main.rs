@@ -52,8 +52,6 @@ fn load_file(filename: &str) -> Vec<u8> {
 fn main() -> Result<(), Error> {
     // Handle args
     let file = Arg::new("file")
-        // .short('o')
-        // .long("open")
         .help("Open file to dump")
         .required(true);
 
@@ -126,7 +124,7 @@ fn main() -> Result<(), Error> {
     let length = file_to_dump.len();
 
     // Start here
-    let mut width = 8;      // For the length of addresses of each line
+    let mut width = 8;      // For the length of each line addresses
     let mut hex_line = String::new();
     let mut ascii_line = String::new();
 
@@ -196,7 +194,7 @@ fn main() -> Result<(), Error> {
     }
 
     println!();
-    //println!("File: {} - Length: {}", &filename, length);
+    //println!("File: {},A${:X},L${:X}", &filename, org, length);
     println!("File: {}", &filename);
     println!(" ORG: {} (${:X})", org, org);
     println!(" LEN: {} (${:X})", length, length);
