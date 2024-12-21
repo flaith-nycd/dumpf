@@ -7,6 +7,7 @@ Options:
 
 Made in Rust and to generate hexa line to copy and paste it in Applewin for Apple 2
 
+```
 $ dumpf --help
 Let's dump a file with the hexa and ascii values | 2o241220
 
@@ -36,3 +37,4 @@ Options:
 
   -V, --version
           Print version
+```
