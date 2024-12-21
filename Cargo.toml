@@ -3,7 +3,7 @@ name = "dumpf"
 version = "0.8.0"
 edition = "2021"
 authors = ["Nicolas Djurovic <flaithotw@gmail.com>"]
-description = "Let's dump a file with the hexa and ascii values | 2o24o613"
+description = "Let's dump a file with the hexa and ascii values | 2o241220"
 
 [dependencies]
 clap = { version = "4.5.7", features = ["cargo"] }
