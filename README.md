@@ -1,9 +1,12 @@
 # dumpf
 Dump a file in an hexa format
+```
 Options:
+
   0: Hexa without address and ascii parts
   1: Hexa with address only
   2: Hexa with address and ascii
+```
 
 Made in Rust and to generate hexa line to copy and paste it in Applewin for Apple 2
 
