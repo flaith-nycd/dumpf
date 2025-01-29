@@ -39,14 +39,20 @@ fn load_file(filename: &str) -> Vec<u8> {
     };
 
     let file_size: u64 = file.metadata().unwrap().len();
-    let buf_reader = BufReader::new(file);
-    // Create a buffer to load data into.
-    let mut buffer = Vec::with_capacity(file_size as usize);
-    let mut part_reader = buf_reader.take(file_size);
-    // Read into the buffer
-    part_reader.read_to_end(&mut buffer).unwrap();
+ 
+    if file_size > 0 {
+        let buf_reader = BufReader::new(file);
+        // Create a buffer to load data into.
+        let mut buffer = Vec::with_capacity(file_size as usize);
+        let mut part_reader = buf_reader.take(file_size);
+        // Read into the buffer
+        part_reader.read_to_end(&mut buffer).unwrap();
 
-    buffer
+        buffer
+    } else { 
+        println!("ERROR *** File \"{}\" cannot be dumped with nothing inside !", filename);
+        exit(-1)
+    }
 }
 
 fn main() -> Result<(), Error> {
