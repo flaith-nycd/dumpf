@@ -26,7 +26,7 @@ File: invert_dasm.o
 
 ```
 $ dumpf --help
-Let's dump a file with the hexa and ascii values | 2o241220
+Let's dump a file with the hexa and ascii values | 2o25o129
 
 Usage: dumpf [OPTIONS] <file>
 
